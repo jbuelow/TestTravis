@@ -3,9 +3,9 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: lawhvictoria-github
+    organization: jbuelow-github
     token:
-      secure: b88a115e62100fcea2d21fbba70e85228520e97d
+      secure: 8c722174ebe97a38fa94745f886effe36023b9b2
 jdk:
   - oraclejdk8
 script:
