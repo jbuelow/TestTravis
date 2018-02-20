@@ -1,4 +1,17 @@
 language: java
+sudo: false
+install: true
+addons:
+  sonarcloud:
+    organization: lawhvictoria-github
+    token:
+      secure: b88a115e62100fcea2d21fbba70e85228520e97d
 jdk:
-- oraclejdk8
-script: ant build
+  - oraclejdk8
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  - ant build
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
